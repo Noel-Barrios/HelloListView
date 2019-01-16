@@ -13,11 +13,20 @@ namespace HelloListView
         {
             InitializeComponent();
 
-
-            ListViewIs.ItemsSource = new List<string>
+            var listView = new ListView
             {
-                "Hello", "World", "ListViewDemonstration"
+                RowHeight = 40
             };
+            listView.ItemsSource = new string[]
+            {
+                "Buy pears", "Buy oranges", "Buy mangos", "Buy apples", "Buy bananas"
+            };
+            Content = new StackLayout
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                Children = { listView }
+            };
+
         }
 
 
